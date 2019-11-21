@@ -15,9 +15,9 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// version 1.0
+// version 1.1
 // Make error smaller and smaller all the time
-function jMySqrt(x, rounds = 10) {
+function jMySqrt(x, rounds = 100) {
   if (x <= 0) return 0;
   if (rounds < 10) rounds = 10;
   
