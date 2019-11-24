@@ -44,6 +44,7 @@
     $("#mee").click(function(){
 	    let a = parseInt($("#inputNumber").val());
 	    let b = parseInt($("#inputIter").val());
+	    
 	    a = isNaN(a) ? 100 : a;
 	    $(".remove-me").remove();
 	    
@@ -54,7 +55,6 @@
 	      //let c = parseInt(i * 0.1 * b);
 	      let r = jMySqrt(a, n);
 	      let error = -(a - r * r);
-	      console.log(a,r,error);
     	  $("#here").append(`<div class="row alert alert-dark remove-me" role="alert">Iterations: ${n} /// Result: ${r.toFixed(3)} /// Error: ${error>0?"+":""}${error.toFixed(3)}</div>`);
     	}
     });

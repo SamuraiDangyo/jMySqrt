@@ -15,19 +15,20 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// version 1.1
+// version 1.2
 // Make error smaller and smaller all the time
 function jMySqrt(x, rounds = 100) {
   if (x <= 0) return 0;
   if (rounds < 10) rounds = 10;
   
-  let guess = x / 2;
-  let error = guess;
+  let guess = x;
+  let error = x / 2;
 
-  while (rounds > 0) {
-    rounds--;
-    
+  while (--rounds > 0) {
     let new_guess = guess - error;
+    
+    if (Math.abs(new_guess * new_guess - x) < 0.001)
+      return new_guess;
     
     if (new_guess * new_guess < x) 
       error *= 0.5; 
